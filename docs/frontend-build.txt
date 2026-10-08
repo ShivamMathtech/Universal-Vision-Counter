@@ -1,0 +1,19 @@
+
+> universal-vision-counter@1.0.0 build
+> npm --prefix frontend run build
+
+
+> visioncounter-frontend@1.0.0 build
+> tsc -b && vite build
+
+vite v6.1.6 building for production...
+transforming...
+✓ 2202 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.50 kB │ gzip:   0.33 kB
+dist/assets/index-Dzgqokk8.css   25.91 kB │ gzip:   6.56 kB
+dist/assets/react-l0sNRNKZ.js     0.00 kB │ gzip:   0.02 kB
+dist/assets/index-5Es-BEAf.js    51.33 kB │ gzip:  14.89 kB
+dist/assets/charts-hB-gLPBV.js  564.44 kB │ gzip: 160.09 kB
+✓ built in 10.01s

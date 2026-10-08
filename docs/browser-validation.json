@@ -1,0 +1,42 @@
+{
+  "errors": [],
+  "imageTotals": "Unique tracks observed\n5\nobjects",
+  "themeSwitch": "light",
+  "stats": {
+    "unique": 4,
+    "display_fps": 23.9,
+    "inference_fps": 8.1
+  },
+  "responsive": [
+    {
+      "requestedWidth": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "viewport": 1920
+    },
+    {
+      "requestedWidth": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "viewport": 1440
+    },
+    {
+      "requestedWidth": 1366,
+      "height": 768,
+      "scrollWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "requestedWidth": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "viewport": 1280
+    },
+    {
+      "requestedWidth": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "viewport": 390
+    }
+  ]
+}

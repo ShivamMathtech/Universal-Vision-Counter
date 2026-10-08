@@ -1,0 +1,25 @@
+{
+  "source": "outputs/demo.avi",
+  "samples": 10,
+  "last": {
+    "video_fps": 23.9,
+    "display_fps": 23.9,
+    "inference_fps": 8.1,
+    "inference_ms": 59.2,
+    "latency_ms": 90.1,
+    "cpu": 12.2,
+    "ram_gb": 0.45,
+    "dropped_frames": 78,
+    "queue_size": 2,
+    "total_unique": 5
+  },
+  "mean": {
+    "video_fps": 23.89,
+    "display_fps": 23.9,
+    "inference_fps": 8.42,
+    "inference_ms": 62.34,
+    "latency_ms": 94.59,
+    "cpu": 11.36,
+    "ram_gb": 0.44
+  }
+}
