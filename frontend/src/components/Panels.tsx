@@ -1,0 +1,13 @@
+import {Box,Activity} from 'lucide-react';
+import {Stats} from '../services/api';
+import {colors} from './AnalyticsCharts';
+export function ObjectCountPanel({stats,mode,names}:{stats:Stats,mode:string,names:string[]}){
+ const counts=mode==='Live occupancy'?stats.current_classes:stats.classes;
+ const classes=[...new Set([...Object.keys(counts),...names])];
+ return <section className="card counts"><div className="card-title"><span><Box size={16}/>Object count</span><span className="tag">{mode==='Live occupancy'?'PRESENT':'UNIQUE'}</span></div><div className="total-count"><span>{mode==='Live occupancy'?'Objects in latest result':'Unique tracks observed'}</span><strong>{mode==='Live occupancy'?stats.current_total:stats.total_unique}<small>objects</small></strong></div><div className="class-list">{classes.length?classes.map((name,i)=><div className="class-row" key={name}><span className="class-icon" style={{color:colors[i%colors.length],background:colors[i%colors.length]+'18'}}><Box size={17}/></span><span>{name}</span><b>{counts[name]||0}</b></div>):<p className="muted small">Load a model to discover its classes.</p>}</div><div className="panel-foot">IDs are unique within this analysis session.</div></section>
+}
+export function StatsPanel({stats}:{stats:Stats}){
+ const entries=[['Display / inference FPS',`${stats.display_fps.toFixed(1)} / ${stats.inference_fps.toFixed(1)}`],['Average inference',`${stats.inference_ms.toFixed(0)} ms`],['Result latency',`${stats.latency_ms.toFixed(0)} ms`],['Confidence',`${(stats.confidence*100).toFixed(1)}%`],['CPU / process RAM',`${stats.cpu}% / ${stats.ram_gb??'N/A'} GB`],['Dropped / skipped',`${stats.dropped_frames} / ${stats.skipped_frames}`],['Queue / resolution',`${stats.queue_size} / ${stats.image_size}px`],['Backend',`${stats.backend.toUpperCase()} · ByteTrack`]];
+ return <section className="card"><div className="card-title"><span><Activity size={16}/>Performance</span><span className="tag">MEASURED</span></div><div className="stats-list">{entries.map(([label,value])=><div key={label}><span>{label}</span><b>{value}</b></div>)}</div></section>
+}
+export function RecentDetections({stats}:{stats:Stats}){return <section className="card"><div className="card-title">First observations <span className="muted">Latest 30</span></div><div className="table-scroll"><table><thead><tr><th>Time</th><th>Class</th><th>ID</th><th>Confidence</th></tr></thead><tbody>{stats.recent.map(d=><tr key={d.id}><td>{new Date(d.timestamp*1000).toLocaleTimeString()}</td><td><span className="tiny-dot"/>{d.class_name}</td><td>#{d.id}</td><td>{(d.confidence*100).toFixed(0)}%</td></tr>)}</tbody></table>{!stats.recent.length&&<div className="empty-table">Confirmed tracks will appear here.</div>}</div></section>}
