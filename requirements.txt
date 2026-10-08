@@ -1,0 +1,16 @@
+# Python 3.12
+# Install CPU PyTorch FIRST
+
+fastapi==0.115.12
+uvicorn==0.34.2
+pydantic==2.13.5
+python-multipart==0.0.20
+
+ultralytics==8.3.221
+opencv-python==4.11.0.86
+
+psutil==7.0.0
+lap==0.5.13
+
+pytest==8.3.5
+httpx==0.28.1

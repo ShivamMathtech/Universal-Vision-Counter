@@ -1,0 +1,1 @@
+{"name":"universal-vision-counter","private":true,"version":"1.0.0","scripts":{"postinstall":"npm --prefix frontend install","dev":"npm --prefix frontend run dev","build":"npm --prefix frontend run build"}}

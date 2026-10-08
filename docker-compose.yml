@@ -1,0 +1,14 @@
+services:
+  visioncounter:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+      - ./outputs:/app/outputs
+      - ./models:/app/models
+    restart: unless-stopped
+    # Linux camera support: uncomment only when /dev/video0 exists.
+    # devices:
+    #   - /dev/video0:/dev/video0
