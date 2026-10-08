@@ -1,0 +1,21 @@
+{
+  "settings_version": "0.0.6",
+  "datasets_dir": "F:\\pj\\Universal-Vision-Counter-v1.0.0\\universal-vision-counter\\datasets",
+  "weights_dir": "weights",
+  "runs_dir": "runs",
+  "uuid": "830fa82a11741d12563edf6115faf20264812d58e10e355fb6ba5c6edb8ef8df",
+  "sync": true,
+  "api_key": "",
+  "openai_api_key": "",
+  "clearml": true,
+  "comet": true,
+  "dvc": true,
+  "hub": true,
+  "mlflow": true,
+  "neptune": true,
+  "raytune": true,
+  "tensorboard": false,
+  "wandb": false,
+  "vscode_msg": true,
+  "openvino_msg": true
+}
